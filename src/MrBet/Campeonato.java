@@ -1,3 +1,5 @@
+package MrBet;
+
 import java.util.Objects;
 
 public class Campeonato {

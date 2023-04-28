@@ -1,3 +1,5 @@
+package MrBet;
+
 import java.util.Objects;
 
 public class Time {
@@ -11,6 +13,12 @@ public class Time {
         this.mascote = mascote;
     }
 
+    public String getId() {
+        return id;
+    }
+    public String toString() {
+        return "[" + id + "] " + nome + " / " + mascote;
+    }
 
     @Override
     public boolean equals(Object o) {
