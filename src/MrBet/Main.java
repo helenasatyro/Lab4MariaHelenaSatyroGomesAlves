@@ -74,11 +74,8 @@ public class Main {
         scanner.nextLine();
         double valor = scanner.nextDouble();
         scanner.nextLine();
-        try {
-            mrBet.addAposta(codigo, camp, valor, colocacao);
-        } catch (Exception e ) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println(mrBet.addAposta(codigo, camp, valor, colocacao));
+
     }
 
     private void exibeCampeonatosTime() {
@@ -111,15 +108,13 @@ public class Main {
         String campeonato = scanner.nextLine();
         try {
             if (mrBet.timeNoCampeonato(codigo, campeonato)) {
-                System.out.println("O TIME ESTÁ NO CAMPEONATO!");
+                System.out.println("TIME ESTÁ NO CAMPEONATO");
             } else {
-                System.out.println("O TIME NÃO ESTÁ NO CAMPEONATO!");
+                System.out.println("TIME NÃO ESTÁ NO CAMPEONATO");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
     private void incluiTimeNoCampeonato() {
@@ -127,12 +122,7 @@ public class Main {
         String codigo = scanner.nextLine();
         System.out.print("Campeonato: ");
         String campeonato = scanner.nextLine();
-        try {
-            mrBet.addAoCampeonato(codigo, campeonato);
-            System.out.println("TIME INCLUÍDO NO CAMPEONATO!");
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+        System.out.println(mrBet.addAoCampeonato(codigo, campeonato));
     }
 
     private void addCampeonato() {
@@ -141,11 +131,7 @@ public class Main {
         System.out.print("Participantes: ");
         int participantes = Integer.parseInt(scanner.nextLine());
 
-        if (mrBet.addCampeonato(campeonato, participantes)) {
-            System.out.println("CAMPEONATO ADICIONADO!");
-        } else {
-            System.out.println("CAMPEONATO JÁ EXISTE!");
-        }
+        System.out.println(mrBet.addCampeonato(campeonato, participantes));
     }
 
     private void recuperaTime() {
@@ -167,10 +153,6 @@ public class Main {
         System.out.print("Mascote: ");
         String mascote = scanner.nextLine();
 
-        if (mrBet.incluiTime(codigo, nome, mascote)) {
-            System.out.println("INCLUSÃO REALIZADA!");
-        } else {
-            System.out.println("TIME JÁ EXISTE!");
-        }
+        System.out.println(mrBet.incluiTime(codigo, nome, mascote));
     }
 }

@@ -54,4 +54,8 @@ public class Campeonato {
     public int max() {
         return times.length;
     }
+
+    public int getQuantTimes() {
+        return proxIndice;
+    }
 }

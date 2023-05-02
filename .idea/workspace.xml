@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f6d561-86db-47b5-b41c-632fca0a716b" name="Changes" comment="sjdhksah">
-      <change afterPath="$PROJECT_DIR$/src/MrBet/Aposta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/CampeonatoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab4MariaHelenaSatyroGomesAlves.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab4MariaHelenaSatyroGomesAlves.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/Campeonato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Campeonato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MrBet/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MrBet/MrBet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MrBet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/TimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TimeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,23 +64,93 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MrBet.Main" />
+  <component name="RunManager" selected="JUnit.SistemaMrBetTest">
+    <configuration name="SistemaMrBetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MrBet.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMrBetTest.cadastraTimeCampCheio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
+      <option name="METHOD_NAME" value="cadastraTimeCampCheio" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMrBetTest.cadastraTimeCampNaoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
+      <option name="METHOD_NAME" value="cadastraTimeCampNaoExiste" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMrBetTest.cadastraTimeNaoExisteCamp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
+      <option name="METHOD_NAME" value="cadastraTimeNaoExisteCamp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMrBetTest.verificaTimeNoCampeonato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
+      <option name="METHOD_NAME" value="verificaTimeNoCampeonato" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SistemaMrBetTest" />
+        <item itemvalue="JUnit.SistemaMrBetTest.verificaTimeNoCampeonato" />
+        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeCampCheio" />
+        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeCampNaoExiste" />
+        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeNaoExisteCamp" />
       </list>
     </recent_temporary>
   </component>

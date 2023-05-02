@@ -16,12 +16,12 @@ public class SistemaMrBet {
         this.apostas = new ArrayList<>();
     }
 
-    public boolean incluiTime(String codigo, String nome, String mascote) {
-        if (times.containsKey(codigo)) return false;
+    public String incluiTime(String codigo, String nome, String mascote) {
+        if (times.containsKey(codigo)) return "TIME JÁ EXISTE!";
 
         Time time = new Time(codigo, nome, mascote);
         times.put(time.getId(), time);
-        return true;
+        return "INCLUSÃO REALIZADA!";
     }
 
     public Time getTime(String codigo) {
@@ -31,29 +31,40 @@ public class SistemaMrBet {
         return null;
     }
 
-    public boolean addCampeonato(String nome, int participantes) {
+    public String addCampeonato(String nome, int participantes) {
         Campeonato campeonato = new Campeonato(nome, participantes);
-        return campeonatos.add(campeonato);
+        if(campeonatos.add(campeonato)) {
+            return "CAMPEONATO ADICIONADO!";
+        }
+        return "CAMPEONATO JÁ EXISTE!";
     }
 
-    public void addAoCampeonato(String codigo, String campeonato) {
-        if (!times.containsKey(codigo)) throw new NoSuchElementException("TIME NÃO EXISTE!");
+    public String addAoCampeonato(String codigo, String campeonato) {
+        if (!times.containsKey(codigo)) return "O TIME NÃO EXISTE!";
         Campeonato camp = buscaCampeonato(campeonato);
-        if (camp == null) throw new NoSuchElementException("CAMPEONATO NÃO EXISTE!");
-        camp.addTime(times.get(codigo));
+        if (camp == null) return "O CAMPEONATO NÃO EXISTE!";
+        try {
+            if (!timeNoCampeonato(codigo, campeonato))
+            camp.addTime(times.get(codigo));
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+        return "TIME INCLUÍDO NO CAMPEONATO!";
     }
 
     public boolean timeNoCampeonato(String codigo, String campeonato) {
-        if (!times.containsKey(codigo)) throw new NoSuchElementException("TIME NÃO EXISTE!");
+        if (!times.containsKey(codigo)) throw new NoSuchElementException("O TIME NÃO EXISTE!");
         Campeonato camp = buscaCampeonato(campeonato);
-        if (camp == null) throw new NoSuchElementException("CAMPEONATO NÃO EXISTE!");
-        return camp.temTime(times.get(codigo));
+        if (camp == null) throw new NoSuchElementException("O CAMPEONATO NÃO EXISTE!");
+        if (camp.temTime(times.get(codigo))) return true;
+        return false;
 
     }
 
-    private Campeonato buscaCampeonato(String nome) {
+    public Campeonato buscaCampeonato(String nome) {
+        Campeonato c = new Campeonato(nome, 000);
         for (Campeonato camp: campeonatos) {
-            if (camp.getNome().equalsIgnoreCase(nome)) return camp;
+            if (camp.equals(c)) return camp;
         }
         return null;
     }
@@ -61,15 +72,21 @@ public class SistemaMrBet {
 
     public String verCampeonatos(String codigoTime) {
         Time time = times.get(codigoTime);
-        if (time == null) throw new NoSuchElementException("TIME NÃO EXISTE!");
+        if (time == null) return "TIME NÃO EXISTE!";
         return time.exibeCampeonatos();
     }
 
-    public void addAposta(String codigoTime, String nomeCamp, double valor, int colocacao) {
-        Time time = times.get(codigoTime);
+    public String addAposta(String codigoTime, String nomeCamp, double valor, int colocacao) {
+        Time time = getTime(codigoTime);
         Campeonato camp = buscaCampeonato(nomeCamp);
-        Aposta aposta = new Aposta(time, camp, valor, colocacao);
+        Aposta aposta;
+        try {
+            aposta = new Aposta(time, camp, valor, colocacao);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
         apostas.add(aposta);
+        return "APOSTA REGISTRADA!";
     }
 
     public String verApostas() {
@@ -80,4 +97,6 @@ public class SistemaMrBet {
         }
         return retorno;
     }
+
+aaaaaaaaaaaaa testarb outras coisaaaas
 }

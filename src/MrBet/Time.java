@@ -22,7 +22,6 @@ public class Time {
 
     public void addCampeonato(Campeonato camp) {
         campeonatos.add(camp);
-
     }
     public String toString() {
         return "[" + id + "] " + nome + " / " + mascote;
