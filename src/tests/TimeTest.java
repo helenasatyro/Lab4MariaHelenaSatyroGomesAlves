@@ -2,18 +2,59 @@ package tests;
 
 import MrBet.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class TimeTest {
+     private Time timeBase;
+     private Campeonato campBase;
 
-    private Time time1;
-    private Time time2;
-    private Time time3;
-    private Time time4;
     @BeforeEach
     void setUp() {
-        time1 = new Time("250_PB", "Nacional de Patos", "Canário");
-        time2 = new Time("252_PB", "Sport Lagoa Seca", "Carneiro");
-        time3 = new Time("002_RJ", "Clube de Regatas do Flamengo", "Urubu");
-        time4 = new Time("105_PB", "Sociedade Recreativa de Monteiro (SOCREMO)", "Gavião");
+        timeBase = new Time("220_PR", "Time Time", "Besouro");
+        campBase = new Campeonato("Camp paraibano", 2);
+    }
+
+    @Test
+    void testaConstrutorParamNulos() {
+        try {
+            Time time = new Time(null, null, null);
+            fail("Deve lançar exceção");
+        } catch (NullPointerException e) {
+            assertEquals("Parâmetros não podem ser nulos", e.getMessage());
+        }
+    }
+
+    @Test
+    void testaConstrutorParamVazios() {
+        try {
+            Time time = new Time("", "", "");
+            fail("Deve lançar exceção");
+        } catch (IllegalArgumentException e) {
+            assertEquals("Parâmetros não podem estar vazios", e.getMessage());
+        }
+    }
+
+    @Test
+    void testaEquals() {
+        Time time1 = new Time("220_PR", "Time", "Mascote");
+        Time time2 = new Time("330_PB", "Time", "Mascote");
+        assertEquals(timeBase, time1);
+        assertNotEquals(timeBase, time2);
+        assertNotEquals(time1, time2);
+    }
+
+
+    @Test
+    void testaExibeCampeonatos() {
+        timeBase.addCampeonato(campBase);
+        // quantidade de participantes é alterada em Campeonato
+        assertEquals("Campeonatos do Time Time:\n* Camp paraibano - 0/2",timeBase.exibeCampeonatos());
+        timeBase.addCampeonato(campBase);
+        assertEquals("Campeonatos do Time Time:\n* Camp paraibano - 0/2",timeBase.exibeCampeonatos(), "Não deve adicionar novamente");
+        Campeonato camp = new Campeonato("Campeonato", 2);
+        timeBase.addCampeonato(camp);
+        assertEquals("Campeonatos do Time Time:\n* Camp paraibano - 0/2\n* Campeonato - 0/2",timeBase.exibeCampeonatos(), "Deve adicionar normalmente.");
     }
 }

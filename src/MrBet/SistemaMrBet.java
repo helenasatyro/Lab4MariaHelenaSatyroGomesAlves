@@ -44,8 +44,9 @@ public class SistemaMrBet {
         Campeonato camp = buscaCampeonato(campeonato);
         if (camp == null) return "O CAMPEONATO NÃO EXISTE!";
         try {
-            if (!timeNoCampeonato(codigo, campeonato))
-            camp.addTime(times.get(codigo));
+            if (!timeNoCampeonato(codigo, campeonato)) {
+                camp.addTime(times.get(codigo));
+            }
         } catch (Exception e) {
             return e.getMessage();
         }
@@ -98,5 +99,4 @@ public class SistemaMrBet {
         return retorno;
     }
 
-aaaaaaaaaaaaa testarb outras coisaaaas
 }

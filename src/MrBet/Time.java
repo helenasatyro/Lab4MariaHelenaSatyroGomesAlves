@@ -9,7 +9,13 @@ public class Time {
     private final String mascote;
     private final HashSet<Campeonato> campeonatos;
 
-    public Time(String id, String nome, String mascote) {
+    public Time(String id, String nome, String mascote) throws IllegalArgumentException, NullPointerException {
+        if (id == null || nome == null || mascote == null) {
+            throw new NullPointerException("Parâmetros não podem ser nulos");
+        }
+        if (id.isBlank() || nome.isBlank() || mascote.isBlank()) {
+            throw new IllegalArgumentException("Parâmetros não podem estar vazios");
+        }
         this.id = id;
         this.nome = nome;
         this.mascote = mascote;

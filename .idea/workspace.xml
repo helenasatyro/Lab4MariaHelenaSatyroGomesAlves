@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f6d561-86db-47b5-b41c-632fca0a716b" name="Changes" comment="sjdhksah">
-      <change afterPath="$PROJECT_DIR$/src/tests/CampeonatoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab4MariaHelenaSatyroGomesAlves.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab4MariaHelenaSatyroGomesAlves.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MrBet/Campeonato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Campeonato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MrBet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/CampeonatoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CampeonatoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/TimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TimeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,20 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "master",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -80,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMrBetTest.cadastraTimeCampCheio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
         <pattern>
@@ -89,14 +89,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
-      <option name="METHOD_NAME" value="cadastraTimeCampCheio" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeTest.testaAddCampeonato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeTest" />
+      <option name="METHOD_NAME" value="testaAddCampeonato" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMrBetTest.cadastraTimeCampNaoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimeTest.testaConstrutorParamNulos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
         <pattern>
@@ -105,14 +120,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
-      <option name="METHOD_NAME" value="cadastraTimeCampNaoExiste" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeTest" />
+      <option name="METHOD_NAME" value="testaConstrutorParamNulos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMrBetTest.cadastraTimeNaoExisteCamp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimeTest.testaExibeCampeonatos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
         <pattern>
@@ -121,24 +136,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
-      <option name="METHOD_NAME" value="cadastraTimeNaoExisteCamp" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SistemaMrBetTest.verificaTimeNoCampeonato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab4MariaHelenaSatyroGomesAlves" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
-      <option name="METHOD_NAME" value="verificaTimeNoCampeonato" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeTest" />
+      <option name="METHOD_NAME" value="testaExibeCampeonatos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SistemaMrBetTest" />
-        <item itemvalue="JUnit.SistemaMrBetTest.verificaTimeNoCampeonato" />
-        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeCampCheio" />
-        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeCampNaoExiste" />
-        <item itemvalue="JUnit.SistemaMrBetTest.cadastraTimeNaoExisteCamp" />
+        <item itemvalue="JUnit.TimeTest" />
+        <item itemvalue="JUnit.TimeTest.testaExibeCampeonatos" />
+        <item itemvalue="JUnit.TimeTest.testaAddCampeonato" />
+        <item itemvalue="JUnit.TimeTest.testaConstrutorParamNulos" />
       </list>
     </recent_temporary>
   </component>
