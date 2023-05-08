@@ -57,13 +57,12 @@ public class SistemaMrBet {
         if (!times.containsKey(codigo)) throw new NoSuchElementException("O TIME NÃO EXISTE!");
         Campeonato camp = buscaCampeonato(campeonato);
         if (camp == null) throw new NoSuchElementException("O CAMPEONATO NÃO EXISTE!");
-        if (camp.temTime(times.get(codigo))) return true;
-        return false;
+        return camp.temTime(times.get(codigo));
 
     }
 
     public Campeonato buscaCampeonato(String nome) {
-        Campeonato c = new Campeonato(nome, 000);
+        Campeonato c = new Campeonato(nome, 10);
         for (Campeonato camp: campeonatos) {
             if (camp.equals(c)) return camp;
         }

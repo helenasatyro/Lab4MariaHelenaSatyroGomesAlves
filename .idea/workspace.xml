@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f6d561-86db-47b5-b41c-632fca0a716b" name="Changes" comment="sjdhksah">
-      <change afterPath="$PROJECT_DIR$/src/tests/ApostaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/Aposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Aposta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MrBet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ApostaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ApostaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +64,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApostaTest.testaConstrutorColocacaoLimite">
+  <component name="RunManager" selected="JUnit.CampeonatoTest">
     <configuration name="ApostaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
@@ -77,22 +76,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ApostaTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApostaTest.testaConstrutorColocacaoLimite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab4MariaHelenaSatyroGomesAlves" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ApostaTest" />
-      <option name="METHOD_NAME" value="testaConstrutorColocacaoLimite" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,6 +96,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CampeonatoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CampeonatoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SistemaMrBetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
@@ -128,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMrBetTest.testaStatusApostas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
         <pattern>
@@ -137,20 +135,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SistemaMrBetTest" />
-      <option name="METHOD_NAME" value="testaStatusApostas" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApostaTest.testaConstrutorColocacaoLimite" />
+        <item itemvalue="JUnit.CampeonatoTest" />
+        <item itemvalue="JUnit.TimeTest" />
         <item itemvalue="JUnit.ApostaTest" />
-        <item itemvalue="JUnit.ApostaTest.testaConstrutorNormal" />
         <item itemvalue="JUnit.SistemaMrBetTest" />
-        <item itemvalue="JUnit.SistemaMrBetTest.testaStatusApostas" />
+        <item itemvalue="JUnit.ApostaTest.testaConstrutorNormal" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682643471144</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sjdhksah">
+      <created>1683508223903</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683508223903</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

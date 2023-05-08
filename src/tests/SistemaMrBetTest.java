@@ -128,9 +128,10 @@ class SistemaMrBetTest {
         mrBetBase.addCampeonato("Brasileirão série A 2023", 1);
         mrBetBase.addAoCampeonato("250_PB", "Copa do Nordeste 2023");
         mrBetBase.addAoCampeonato("250_PB", "Brasileirão série A 2023");
-        assertEquals("Campeonatos do Nacional de Patos:\n" +
-                "* Copa do Nordeste 2023 - 1/20\n" +
-                "* Brasileirão série A 2023 - 1/1",mrBetBase.verCampeonatos("250_PB"));
+        assertEquals("""
+                Campeonatos do Nacional de Patos:
+                * Copa do Nordeste 2023 - 1/20
+                * Brasileirão série A 2023 - 1/1""",mrBetBase.verCampeonatos("250_PB"));
     }
 
     @Test
@@ -183,16 +184,18 @@ class SistemaMrBetTest {
         mrBetBase.addAposta("252_PB", "Nordestão 2023", 250.0, 1 );
 
         assertEquals(
-                "Apostas:\n" +
-                "\n" +
-                "1. [250_PB] Nacional de Patos / Canário\n" +
-                "Campeonato Paraibano 2023\n" +
-                "2/14\n" +
-                "R$ 50.00\n" +
-                "\n" +
-                "2. [252_PB] Sport Lagoa Seca / Carneiro\n" +
-                "Nordestão 2023\n" +
-                "1/20\n" +
-                "R$ 250.00\n", mrBetBase.verApostas());
+                """
+                        Apostas:
+
+                        1. [250_PB] Nacional de Patos / Canário
+                        Campeonato Paraibano 2023
+                        2/14
+                        R$ 50.00
+
+                        2. [252_PB] Sport Lagoa Seca / Carneiro
+                        Nordestão 2023
+                        1/20
+                        R$ 250.00
+                        """, mrBetBase.verApostas());
     }
 }

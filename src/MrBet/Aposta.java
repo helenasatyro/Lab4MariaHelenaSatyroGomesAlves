@@ -3,10 +3,10 @@ package MrBet;
 import java.text.DecimalFormat;
 
 public class Aposta {
-    private Time time;
-    private Campeonato campeonato;
-    private double valor;
-    private int colocacao;
+    private final Time time;
+    private final Campeonato campeonato;
+    private final double valor;
+    private final int colocacao;
 
     public Aposta(Time time, Campeonato campeonato, double valor, int colocacao) {
         if (time == null) throw new NullPointerException("O TIME NÃO EXISTE!");

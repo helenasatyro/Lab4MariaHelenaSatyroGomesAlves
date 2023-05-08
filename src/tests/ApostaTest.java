@@ -9,24 +9,22 @@ class ApostaTest {
     private Time time1;
     private Time time2;
     private Campeonato camp1;
-    private Campeonato camp2;
-    private Aposta apostaBase;
 
     @BeforeEach
     void setUp() {
         time1 = new Time("250_PB", "time um", "mascote um");
         time2 = new Time("252_PB", "time dois", "mascote dois");
         camp1 = new Campeonato("campeonato um", 10);
-        camp2 = new Campeonato("campeonato dois", 10);
     }
    @Test
     void testaConstrutorNormal() {
        Aposta aposta = new Aposta(time1, camp1, 50, 5);
        assertEquals(
-               "[250_PB] time um / mascote um\n" +
-               "campeonato um\n" +
-               "5/10\n" +
-               "R$ 50.00" ,aposta.toString());
+               """
+                       [250_PB] time um / mascote um
+                       campeonato um
+                       5/10
+                       R$ 50.00""",aposta.toString());
    }
     @Test
     void testaConstrutorTimeNulo() {
@@ -68,9 +66,10 @@ class ApostaTest {
     void testaConstrutorColocacaoLimite() {
         Aposta aposta = new Aposta(time1, camp1, 50, 10);
         assertEquals(
-                "[250_PB] time um / mascote um\n" +
-                        "campeonato um\n" +
-                        "10/10\n" +
-                        "R$ 50.00" ,aposta.toString());
+                """
+                        [250_PB] time um / mascote um
+                        campeonato um
+                        10/10
+                        R$ 50.00""",aposta.toString());
     }
 }
