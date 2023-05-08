@@ -1,6 +1,6 @@
 package MrBet;
 
-import java.util.NoSuchElementException;
+import java.text.DecimalFormat;
 
 public class Aposta {
     private Time time;
@@ -15,12 +15,13 @@ public class Aposta {
         this.campeonato = campeonato;
         if (valor <= 0) throw new IllegalArgumentException("VALOR DA APOSTA DEVE SER MAIOR QUE ZERO");
         this.valor = valor;
-        if (!(colocacao < campeonato.max())) throw new IllegalArgumentException("APOSTA NÃO REGISTRADA!");
+        if (colocacao <= 0 || !(colocacao <= campeonato.max())) throw new IllegalArgumentException("APOSTA NÃO REGISTRADA!");
         this.colocacao = colocacao;
     }
 
     @Override
     public String toString() {
-        return time + "\n" + campeonato.getNome() + "\n" + colocacao + "/" + campeonato.max() + "\nR$ " + valor;
+        DecimalFormat df = new DecimalFormat("0.00");
+        return time + "\n" + campeonato.getNome() + "\n" + colocacao + "/" + campeonato.max() + "\nR$ " + df.format(valor);
     }
 }

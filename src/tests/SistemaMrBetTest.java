@@ -1,8 +1,6 @@
 package tests;
 
-import MrBet.Campeonato;
 import MrBet.SistemaMrBet;
-import MrBet.Time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -108,5 +106,93 @@ class SistemaMrBetTest {
         } catch (Exception e) {
             assertEquals("O TIME NÃO EXISTE!", e.getMessage());
         }
+    }
+
+    @Test
+    void addTimeDuplicado() {
+        assertEquals("TIME JÁ EXISTE!", mrBetBase.incluiTime("250_PB", "time", "mascote"));
+    }
+
+    @Test
+    void recuperaTime() {
+        assertEquals("[250_PB] Nacional de Patos / Canário",mrBetBase.getTime("250_PB").toString());
+    }
+    @Test
+    void recuperaTimeInexistente() {
+            assertNull(mrBetBase.getTime("2750_PB"));
+    }
+
+    @Test
+    void testaVerCampeonatosDoTime() {
+        mrBetBase.addCampeonato( "Copa do Nordeste 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 1);
+        mrBetBase.addAoCampeonato("250_PB", "Copa do Nordeste 2023");
+        mrBetBase.addAoCampeonato("250_PB", "Brasileirão série A 2023");
+        assertEquals("Campeonatos do Nacional de Patos:\n" +
+                "* Copa do Nordeste 2023 - 1/20\n" +
+                "* Brasileirão série A 2023 - 1/1",mrBetBase.verCampeonatos("250_PB"));
+    }
+
+    @Test
+    void testaApostar() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("APOSTA REGISTRADA!", mrBetBase.addAposta("252_PB", "Brasileirão série A 2023", 10, 2));    }
+    @Test
+    void testaApostarTimeNaoExiste() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("O TIME NÃO EXISTE!", mrBetBase.addAposta("256_PB", "Brasileirão série A 2023", 0, 2));
+    }
+    @Test
+    void testaApostarCampNaoExiste() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("O CAMPEONATO NÃO EXISTE!", mrBetBase.addAposta("252_PB", "Brasileirão 2023", 10, 2));
+    }
+    @Test
+    void testaApostarSemValor() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("VALOR DA APOSTA DEVE SER MAIOR QUE ZERO", mrBetBase.addAposta("252_PB", "Brasileirão série A 2023", 0, 2));
+    }
+    @Test
+    void testaApostarPosicaoExcedente() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 1);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("APOSTA NÃO REGISTRADA!", mrBetBase.addAposta("252_PB","Brasileirão série A 2023", 3.0, 2 ));
+    }
+    @Test
+    void testaApostarPosicaoInferior() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("APOSTA NÃO REGISTRADA!", mrBetBase.addAposta("252_PB","Brasileirão série A 2023", 3.0, 0 ));
+    }
+    @Test
+    void testaApostarPosicaoLimite() {
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 1);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        assertEquals("APOSTA REGISTRADA!", mrBetBase.addAposta("252_PB","Brasileirão série A 2023", 3.0, 1 ));
+    }
+
+    @Test
+    void testaStatusApostas() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addAposta("250_PB", "Campeonato Paraibano 2023", 50.0, 2 );
+        mrBetBase.addAposta("252_PB", "Nordestão 2023", 250.0, 1 );
+
+        assertEquals(
+                "Apostas:\n" +
+                "\n" +
+                "1. [250_PB] Nacional de Patos / Canário\n" +
+                "Campeonato Paraibano 2023\n" +
+                "2/14\n" +
+                "R$ 50.00\n" +
+                "\n" +
+                "2. [252_PB] Sport Lagoa Seca / Carneiro\n" +
+                "Nordestão 2023\n" +
+                "1/20\n" +
+                "R$ 250.00\n", mrBetBase.verApostas());
     }
 }

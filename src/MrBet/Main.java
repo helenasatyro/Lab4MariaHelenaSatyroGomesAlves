@@ -30,8 +30,8 @@ public class Main {
     }
 
     private void cmd(String cmd) {
-        if (cmd == null || cmd.isBlank()) {
-            throw new IllegalArgumentException("Comando não pode ser nulo ou vazio.");
+        if (cmd.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
         }
 
         switch (cmd) {
@@ -50,8 +50,8 @@ public class Main {
     private void tentaSorte() {
         System.out.print("(A)Apostar ou (S)Status das Apostas? ");
         String cmd = scanner.nextLine().toUpperCase();
-        if (cmd == null || cmd.isBlank()) {
-            throw new IllegalArgumentException("Comando não pode ser nulo ou vazio.");
+        if (cmd.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
         }
 
         switch (cmd) {
@@ -67,8 +67,14 @@ public class Main {
     private void apostar() {
         System.out.print("Código:");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Campeonato: ");
         String camp = scanner.nextLine();
+        if (camp.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Colocação: ");
         int colocacao = scanner.nextInt();
         scanner.nextLine();
@@ -81,6 +87,9 @@ public class Main {
     private void exibeCampeonatosTime() {
         System.out.print("Time: ");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.println(mrBet.verCampeonatos(codigo));
     }
 
@@ -92,8 +101,8 @@ public class Main {
     private void adicionaTimeOuVerificaCampeonato() {
         System.out.println("(I) Incluir time em campeonato ou (V) Verificar se time está em campeonato? ");
         String cmd = scanner.nextLine().toUpperCase();
-        if (cmd == null || cmd.isBlank()) {
-            throw new IllegalArgumentException("Comando não pode ser nulo ou vazio.");
+        if (cmd.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
         }
         switch (cmd) {
             case "I" -> incluiTimeNoCampeonato();
@@ -104,8 +113,14 @@ public class Main {
     private void verificaEstaNoCampeonato() {
         System.out.print("Código: ");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Campeonato: ");
         String campeonato = scanner.nextLine();
+        if (campeonato.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         try {
             if (mrBet.timeNoCampeonato(codigo, campeonato)) {
                 System.out.println("TIME ESTÁ NO CAMPEONATO");
@@ -120,23 +135,34 @@ public class Main {
     private void incluiTimeNoCampeonato() {
         System.out.print("Código: ");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Campeonato: ");
         String campeonato = scanner.nextLine();
+        if (campeonato.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.println(mrBet.addAoCampeonato(codigo, campeonato));
     }
 
     private void addCampeonato() {
         System.out.print("Campeonato: ");
         String campeonato = scanner.nextLine();
+        if (campeonato.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Participantes: ");
         int participantes = Integer.parseInt(scanner.nextLine());
-
         System.out.println(mrBet.addCampeonato(campeonato, participantes));
     }
 
     private void recuperaTime() {
         System.out.print("Código: ");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         Time time = mrBet.getTime(codigo);
         if (time == null) {
             System.out.println("TIME NÃO EXISTE!");
@@ -148,11 +174,19 @@ public class Main {
     private void inclusaoTimes() {
         System.out.print("Código: ");
         String codigo = scanner.nextLine();
+        if (codigo.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
+        if (nome.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.print("Mascote: ");
         String mascote = scanner.nextLine();
-
+        if (mascote.isBlank()) {
+            throw new IllegalArgumentException("Entrada inválida.");
+        }
         System.out.println(mrBet.incluiTime(codigo, nome, mascote));
     }
 }

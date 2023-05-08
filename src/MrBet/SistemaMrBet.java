@@ -92,9 +92,10 @@ public class SistemaMrBet {
 
     public String verApostas() {
         int i = 0;
-        String retorno = "";
+        String retorno = "Apostas:\n";
         for (Aposta a: apostas) {
-            retorno += i + ". " + a;
+            retorno += "\n"+ (i+1) + ". " + a + "\n";
+            i++;
         }
         return retorno;
     }
