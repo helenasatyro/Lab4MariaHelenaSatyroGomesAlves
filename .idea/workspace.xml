@@ -7,9 +7,9 @@
     <list default="true" id="e0f6d561-86db-47b5-b41c-632fca0a716b" name="Changes" comment="sjdhksah">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/Aposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Aposta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MrBet/Campeonato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Campeonato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/SistemaMrBet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ApostaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ApostaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/SistemaMrBetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MrBet/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MrBet/Time.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +39,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "master",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -64,7 +65,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CampeonatoTest">
+  <component name="RunManager" selected="JUnit.tests in Lab4MariaHelenaSatyroGomesAlves">
     <configuration name="ApostaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab4MariaHelenaSatyroGomesAlves" />
       <extension name="coverage">
@@ -76,22 +77,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ApostaTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApostaTest.testaConstrutorNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab4MariaHelenaSatyroGomesAlves" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ApostaTest" />
-      <option name="METHOD_NAME" value="testaConstrutorNormal" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,13 +126,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tests in Lab4MariaHelenaSatyroGomesAlves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4MariaHelenaSatyroGomesAlves" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CampeonatoTest" />
-        <item itemvalue="JUnit.TimeTest" />
+        <item itemvalue="JUnit.tests in Lab4MariaHelenaSatyroGomesAlves" />
         <item itemvalue="JUnit.ApostaTest" />
+        <item itemvalue="JUnit.CampeonatoTest" />
         <item itemvalue="JUnit.SistemaMrBetTest" />
-        <item itemvalue="JUnit.ApostaTest.testaConstrutorNormal" />
+        <item itemvalue="JUnit.TimeTest" />
       </list>
     </recent_temporary>
   </component>
