@@ -198,4 +198,130 @@ class SistemaMrBetTest {
                         R$ 250.00
                         """, mrBetBase.verApostas());
     }
+
+    @Test
+    void testaBonusNinguemEmCampNinguemEmAposta() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        assertEquals("""
+                Participação mais frequente em campeonatos (0)
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+                [252_PB] Sport Lagoa Seca / Carneiro
+
+                Ainda não participou de campeonato
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+                [252_PB] Sport Lagoa Seca / Carneiro
+
+                Popularidade em apostas""", mrBetBase.historico());
+    }
+    @Test
+    void testaBonusUmEmCampUmEmAposta() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        mrBetBase.addAposta("250_PB", "Campeonato Paraibano 2023", 50.0, 2 );
+        mrBetBase.addAposta("250_PB", "Nordestão 2023", 250.0, 1 );
+        mrBetBase.addAposta("250_PB", "Nordestão 2023", 250.0, 1 );
+        assertEquals("""
+                Participação mais frequente em campeonatos (1)
+                [252_PB] Sport Lagoa Seca / Carneiro
+
+                Ainda não participou de campeonato
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+
+                Popularidade em apostas
+                Nacional de Patos / 2""", mrBetBase.historico(), "Deve contar duas instancias de aposta no nacional de patos e registrar que o Sport Lagoa Seca participou do maximo de campeonatos (1)");
+    }
+
+    @Test
+    void testaBonusEmpateEmCamp() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("250_PB", "Nordestão 2023");
+        assertEquals("""
+                Participação mais frequente em campeonatos (1)
+                [250_PB] Nacional de Patos / Canário
+                [252_PB] Sport Lagoa Seca / Carneiro
+
+                Ainda não participou de campeonato
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+
+                Popularidade em apostas""", mrBetBase.historico());
+    }
+    @Test
+    void testaBonusVariasApostas() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAposta("250_PB", "Campeonato Paraibano 2023", 50.0, 2 );
+        mrBetBase.addAposta("250_PB", "Nordestão 2023", 250.0, 1 );
+        mrBetBase.addAposta("250_PB", "Nordestão 2023", 250.0, 1 );
+        mrBetBase.addAposta("252_PB", "Campeonato Paraibano 2023", 50.0, 1 );
+
+        assertEquals("""
+                Participação mais frequente em campeonatos (0)
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+                [252_PB] Sport Lagoa Seca / Carneiro
+                                
+                Ainda não participou de campeonato
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+                [252_PB] Sport Lagoa Seca / Carneiro
+                                
+                Popularidade em apostas
+                Nacional de Patos / 2
+                Sport Lagoa Seca / 1""", mrBetBase.historico());
+    }
+    @Test
+    void testaTodosEmCamp() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("105_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("250_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("002_RJ", "Nordestão 2023");
+        mrBetBase.addAoCampeonato("250_PB", "Nordestão 2023");
+        assertEquals("""
+                Participação mais frequente em campeonatos (2)
+                [250_PB] Nacional de Patos / Canário
+
+                Ainda não participou de campeonato
+
+                Popularidade em apostas""", mrBetBase.historico());
+    }
+    @Test
+    void testaTodosEmCampEmpatados() {
+        mrBetBase.addCampeonato("Campeonato Paraibano 2023", 14);
+        mrBetBase.addCampeonato("Nordestão 2023", 20);
+        mrBetBase.addCampeonato("Brasileirão série A 2023", 10);
+        mrBetBase.addAoCampeonato("252_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("105_PB", "Brasileirão série A 2023");
+        mrBetBase.addAoCampeonato("002_RJ", "Nordestão 2023");
+        mrBetBase.addAoCampeonato("250_PB", "Nordestão 2023");
+        assertEquals("""
+                Participação mais frequente em campeonatos (1)
+                [250_PB] Nacional de Patos / Canário
+                [002_RJ] Clube de Regatas do Flamengo / Urubu
+                [105_PB] Sociedade Recreativa de Monteiro (SOCREMO) / Gavião
+                [252_PB] Sport Lagoa Seca / Carneiro
+
+                Ainda não participou de campeonato
+
+                Popularidade em apostas""", mrBetBase.historico());
+    }
 }

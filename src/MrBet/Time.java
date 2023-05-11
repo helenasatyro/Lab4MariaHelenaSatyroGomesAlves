@@ -87,4 +87,19 @@ public class Time {
         }
         return retorno;
     }
+
+    /**
+     * Informa o número de campeonatos que o time participa
+     * @return int numero de campeonatos que o time participa.
+     */
+    public int numCamps() {
+        return campeonatos.size();
+    }
+
+    /**
+     * @return nome do time
+     */
+    public String getNome() {
+        return nome;
+    }
 }

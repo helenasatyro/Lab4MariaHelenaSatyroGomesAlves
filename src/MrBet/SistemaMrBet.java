@@ -13,6 +13,7 @@ public class SistemaMrBet {
     private final HashMap<String, Time> times;
     private final HashSet<Campeonato> campeonatos;
     private final ArrayList<Aposta> apostas;
+    private final HashMap<String, Integer> timesPrimeiroLugar;
 
     /**
      * Construtor sem parâmetros, inicializa as coleções de times (HashMap), campeonatos(HashSet) e apostas(ArrayList).
@@ -21,6 +22,7 @@ public class SistemaMrBet {
         this.times = new HashMap<>();
         this.campeonatos = new HashSet<>();
         this.apostas = new ArrayList<>();
+        this.timesPrimeiroLugar = new HashMap<>();
     }
 
     /**
@@ -151,6 +153,9 @@ public class SistemaMrBet {
             return e.getMessage();
         }
         apostas.add(aposta);
+        if (colocacao == 1) {
+            timesPrimeiroLugar.merge(codigoTime, 1, Integer::sum);
+        }
         return "APOSTA REGISTRADA!";
     }
 
@@ -174,4 +179,45 @@ public class SistemaMrBet {
         return retorno;
     }
 
+    /**
+     * Formata uma tela de resumo do histórico de algumas operações,
+     * incluindo os times com mais participações em campeonatos,
+     * os times que não participaram de nenhum campeonato,
+     * e os times que mais receberam apostas de primeira colocação.
+     * @return String com o histórico formatado
+     */
+    public String historico() {
+        return timeMaisCamps() + "\n\n" + timeSemCamp() + "\n\n" + timePopularEmApostas();
+    }
+
+    private String timePopularEmApostas() {
+        String retorno = "Popularidade em apostas";
+        for (String c: timesPrimeiroLugar.keySet()) {
+            retorno += "\n" + getTime(c).getNome() + " / " + timesPrimeiroLugar.get(c);
+        }
+        return retorno;
+    }
+    private String timeMaisCamps() {
+        int maxCamps = 0;
+        String retorno = "";
+        for (Time t: times.values()) {
+            if (t.numCamps() > maxCamps){
+                maxCamps = t.numCamps();
+                retorno = "\n" + t;
+            } else if (t.numCamps() == maxCamps) {
+                retorno += "\n" + t;
+            }
+        }
+        return "Participação mais frequente em campeonatos (" + maxCamps + ")" + retorno;
+    }
+
+    private String timeSemCamp() {
+        String retorno = "Ainda não participou de campeonato";
+        for (Time t: times.values()) {
+            if (t.numCamps() == 0) {
+                retorno += "\n" + t;
+            }
+        }
+        return retorno;
+    }
 }

@@ -22,6 +22,7 @@ public class Main {
                     (E)Exibir campeonatos que o time participa
                     (T)Tentar a sorte e status
                     (!)Já pode fechar o programa!
+                    (H)Histórico
                                     
                     Opção>\s""");
 
@@ -42,9 +43,14 @@ public class Main {
             case "E" -> exibeCampeonatosTime();
             case "T" -> tentaSorte();
             case "!" -> encerrar();
+            case "H" -> historico();
             default -> System.out.println("Entrada inválida. Tente novamente.");
 
         }
+    }
+
+    private void historico() {
+        System.out.println(mrBet.historico());
     }
 
     private void tentaSorte() {
